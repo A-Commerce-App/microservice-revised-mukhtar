@@ -1,0 +1,8 @@
+node_modules
+hide.js
+client/dist/bundle.js
+docker-compose.yml
+dockerinfo.txt
+products.csv
+Dockerfile
+newrelic*
