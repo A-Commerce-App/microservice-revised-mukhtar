@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const express = require('express');
-require('newrelic')
+// require('newrelic')
 
 const { db, redis } = require('./database/connection')
 const path = require('path');
