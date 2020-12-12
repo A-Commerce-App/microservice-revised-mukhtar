@@ -1,6 +1,6 @@
 const pgp = require('pg-promise')()
 const redis = require('redis').createClient({
-  host: '3.17.63.110',
+  host: '3.16.165.163',
   port: 6379
 })
 const { promisify } = require('util')
