@@ -6,12 +6,12 @@ const pgp = require('pg-promise')()
 const { promisify } = require('util')
 
 const config = {
-  host: process.env.DB_HOST,
+  host: '172.31.7.26',
   // host: 'localhost',
-  port: process.env.DB_PORT,
-  database: process.env.DB_DATABASE,
+  port: 5432,
+  database: 'sdc_carousel',
   // max: 1000000,
-  user: process.env.DB_USERNAME,
+  user: 'postgres',
   // password: process.env.DB_PASSWORD
 }
 
