@@ -8,7 +8,7 @@ const config = {
   database: process.env.DB_DATABASE,
   // max: 1000000,
   user: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD
+  // password: process.env.DB_PASSWORD
 }
 
 // console.log(config)
