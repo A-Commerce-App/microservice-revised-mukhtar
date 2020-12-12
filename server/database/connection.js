@@ -1,8 +1,8 @@
 const pgp = require('pg-promise')()
-const redis = require('redis').createClient({
-  host: '3.16.165.163',
-  port: 6379
-})
+// const redis = require('redis').createClient({
+//   host: '3.16.165.163',
+//   port: 6379
+// })
 const { promisify } = require('util')
 
 const config = {
@@ -21,6 +21,6 @@ module.exports = {
   schema: new pgp.helpers.ColumnSet(['id', 'images', 'productName'], { table: 'products' }),
   pgp,
   // redis,
-  redisGet: promisify(redis.get).bind(redis),
-  redisSet: promisify(redis.set).bind(redis)
+  // redisGet: promisify(redis.get).bind(redis),
+  // redisSet: promisify(redis.set).bind(redis)
 }

@@ -1,7 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 
-const { db, schema, pgp, redisSet } = require("./connection");
+// const { db, schema, pgp, redisSet } = require("./connection");
+const { db, schema, pgp } = require("./connection");
 const fourRandImagesXTimes = require('./utils/fourRandImagesXTimes');
 const randInclusive = require('./utils/randInclusive');
 const xRandomProductNames = require('./utils/xRandomProductNames');
@@ -44,7 +45,7 @@ const main = async () => {
     // item.productName = randomProductNames[randInclusive(0, randImages.length - 1)]
 
     toInsertContainer.push(item)
-    redisSet(primary_id, JSON.stringify(item))
+    // redisSet(primary_id, JSON.stringify(item))
 
     insertedContainer[primary_id] = item
     accumulator++
