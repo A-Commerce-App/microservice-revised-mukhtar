@@ -2,7 +2,7 @@
 const express = require('express');
 // require('newrelic')
 
-const { db, redis } = require('./database/connection')
+const { db, redis, redisGet } = require('./database/connection')
 const path = require('path');
 const redisEnabled = require('./middleware/redisEnabled');
 const app = express();
@@ -28,10 +28,16 @@ app.get('/api/product/:id', redisEnabled, async (req, res) => {
 
 });
 
-app.get('/hello', async (req, res) => {
-  const data = await asyncGet('hello')
-  console.log(data)
-  res.send('hello world')
+
+app.get('/redis/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const data = await redisGet(id)
+    res.send(JSON.stringify(data))
+
+  } catch (error) {
+    res.send({ error })
+  }
 })
 
 
