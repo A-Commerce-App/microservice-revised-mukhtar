@@ -22,6 +22,7 @@ app.get('/api/product/:id', redisEnabled, async (req, res) => {
     // console.log(data.images[0])
     res.send(JSON.stringify(data))
   } catch (error) {
+    console.log(error)
     res.status(500).send({ error })
   }
 
